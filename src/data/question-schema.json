@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AZ-104 Question Bank",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "domain",
+      "topic",
+      "difficulty",
+      "type",
+      "question",
+      "options",
+      "correctAnswer",
+      "explanation",
+      "reference"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "string", "pattern": "^AZ104-[0-9]{4}$" },
+      "domain": {
+        "type": "string",
+        "enum": ["Identity and Governance", "Storage", "Compute", "Networking", "Monitoring"]
+      },
+      "topic": { "type": "string", "minLength": 2 },
+      "difficulty": { "type": "string", "enum": ["easy", "medium", "hard"] },
+      "type": {
+        "type": "string",
+        "enum": [
+          "multiple-choice",
+          "multiple-response",
+          "yes-no",
+          "matching",
+          "ordering",
+          "scenario"
+        ]
+      },
+      "question": { "type": "string", "minLength": 10 },
+      "options": { "type": "array", "items": { "type": "string" }, "minItems": 2 },
+      "correctAnswer": {
+        "oneOf": [
+          { "type": "integer", "minimum": 0 },
+          { "type": "array", "items": { "type": "integer", "minimum": 0 }, "minItems": 1 }
+        ]
+      },
+      "explanation": { "type": "string", "minLength": 10 },
+      "reference": { "type": "string" },
+      "referenceUrl": { "type": "string" },
+      "pairs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["left", "right"],
+          "properties": { "left": { "type": "string" }, "right": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

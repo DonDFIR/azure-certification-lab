@@ -1,0 +1,15 @@
+[
+  {
+    "id": "CS-001",
+    "title": "Contoso Varejo — Expansão para o Azure",
+    "context": "A Contoso Varejo é uma rede de lojas que está migrando sua infraestrutura de e-commerce para o Azure. A empresa opera atualmente em um único datacenter on-premises e quer usar o Azure para obter alta disponibilidade e melhor governança de custos entre as equipes de Desenvolvimento, Estoque e Financeiro.",
+    "requirements": [
+      "Cada equipe (Desenvolvimento, Estoque, Financeiro) deve poder criar seus próprios recursos, mas sem exceder o orçamento mensal definido para sua área.",
+      "Os administradores de rede precisam poder auditar, a qualquer momento, exatamente quais alterações de configuração foram feitas em cada recurso e por quem.",
+      "Nenhuma equipe deve conseguir excluir acidentalmente os recursos de produção do site de e-commerce.",
+      "A solução deve usar apenas recursos nativos do Azure, sem ferramentas de terceiros."
+    ],
+    "environment": "A subscription única da Contoso contém três resource groups: rg-dev, rg-estoque e rg-financeiro. Todos os recursos de produção do site de e-commerce (App Service, Storage Account e Azure SQL Database) estão no resource group rg-producao.",
+    "questionIds": ["DEMO-0002", "DEMO-0003", "DEMO-0004"]
+  }
+]
